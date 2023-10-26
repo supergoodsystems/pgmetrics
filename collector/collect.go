@@ -178,7 +178,7 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 	// form connection string
 	var connstr string
 	if len(o.Host) > 0 {
-		connstr += makeKV("host", o.Host)
+		connstr += makeKV("host", o.Host+"?options="+"endpoint%3D"+os.Getenv("PGENDPOINT"))
 	}
 	connstr += makeKV("port", strconv.Itoa(int(o.Port)))
 	if len(o.User) > 0 {
