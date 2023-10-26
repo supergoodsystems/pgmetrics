@@ -36,6 +36,8 @@ github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4/go.mod h1:N6UoU20jOqgg
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
+github.com/rapidloop/pgmetrics v1.16.0 h1:GKlgoqdxxGcVUjQS0kjLtbqb6qobMxfDVVZr4V50zLM=
+github.com/rapidloop/pgmetrics v1.16.0/go.mod h1:bQYwG69cXHQSRycc8/gx3ruXePpvDuwnlbblUOraerg=
 github.com/rapidloop/pq v1.1.1 h1:nC/PmemMKppcgQ1gE2BqxqlEEqzJIHL3afZOjjZhvnE=
 github.com/rapidloop/pq v1.1.1/go.mod h1:KCIg3rAcDl7ELp5s30z4lIp1xaOujoaMXnlYKhHECFo=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
@@ -44,7 +46,6 @@ github.com/stretchr/testify v1.7.0/go.mod h1:6Fq8oRcR53rry900zMqJjRRixrwX3KX962/
 github.com/xdg-go/stringprep v1.0.0 h1:W/PJi55zhi8ClBDgGZK2sdhe6QxuHS6YiVwrGEOYjdE=
 github.com/xdg-go/stringprep v1.0.0/go.mod h1:1lAKNhwXFE4//YT4gqVxkhclqvPTWe2Kyd6L59AbR8w=
 github.com/xdg/stringprep v1.0.0 h1:d9X0esnoa3dFsV0FG35rAT0RIhYFlPq7MiP+DW89La0=
-github.com/xdg/stringprep v1.0.0/go.mod h1:Jhud4/sHMO4oL310DaZAKk9ZaJ08SJfe+sJh0HrGL1Y=
 github.com/yuin/goldmark v1.4.13/go.mod h1:6yULJ656Px+3vBD8DxQVa3kxgyrAnzto9xy5taEt/CY=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9/go.mod h1:LzIPMQfyMNhhGPhUkYOs5KpL4U8rLKemX1yGLhDgUto=
