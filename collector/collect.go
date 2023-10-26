@@ -190,6 +190,9 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 	if os.Getenv("PGSSLMODE") == "" {
 		connstr += makeKV("sslmode", "disable")
 	}
+	if os.Getenv("PGENDPOINT") != "" {
+		connstr += makeKV("options", "endpoint%3D"+os.Getenv("PGENDPOINT"))
+	}
 	connstr += makeKV("application_name", "pgmetrics")
 
 	// set timeouts (but not for pgbouncer, it does not like them)
@@ -682,7 +685,7 @@ func (c *collector) getWALArchiver() {
 	ctx, cancel := context.WithTimeout(context.Background(), c.timeout)
 	defer cancel()
 
-	q := `SELECT archived_count, 
+	q := `SELECT archived_count,
 			COALESCE(last_archived_wal, ''),
 			COALESCE(EXTRACT(EPOCH FROM last_archived_time)::bigint, 0),
 			failed_count,
@@ -737,7 +740,7 @@ func (c *collector) getReplicationv10() {
 	defer cancel()
 
 	q := `SELECT COALESCE(usename, ''), application_name,
-			COALESCE(client_hostname::text, client_addr::text, ''), 
+			COALESCE(client_hostname::text, client_addr::text, ''),
 			COALESCE(EXTRACT(EPOCH FROM backend_start)::bigint, 0),
 			backend_xmin, COALESCE(state, ''),
 			COALESCE(sent_lsn::text, ''),
@@ -788,7 +791,7 @@ func (c *collector) getReplicationv9() {
 	defer cancel()
 
 	q := `SELECT COALESCE(usename, ''), application_name,
-			COALESCE(client_hostname::text, client_addr::text, ''), 
+			COALESCE(client_hostname::text, client_addr::text, ''),
 			COALESCE(EXTRACT(EPOCH FROM backend_start)::bigint, 0),
 			backend_xmin, COALESCE(state, ''),
 			COALESCE(sent_location::text, ''),
@@ -882,7 +885,7 @@ func (c *collector) getWalReceiverv96() {
 	ctx, cancel := context.WithTimeout(context.Background(), c.timeout)
 	defer cancel()
 
-	q := `SELECT status, receive_start_lsn, receive_start_tli, received_lsn, 
+	q := `SELECT status, receive_start_lsn, receive_start_tli, received_lsn,
 			received_tli, last_msg_send_time, last_msg_receipt_time,
 			latest_end_lsn,
 			COALESCE(EXTRACT(EPOCH FROM latest_end_time)::bigint, 0),
@@ -2231,7 +2234,7 @@ func (c *collector) getBlockers() {
 	q := `
 SELECT DISTINCT blocked_locks.pid AS blocked_pid, blocking_locks.pid AS blocking_pid
  FROM  pg_catalog.pg_locks blocked_locks
-  JOIN pg_catalog.pg_locks blocking_locks 
+  JOIN pg_catalog.pg_locks blocking_locks
         ON blocking_locks.locktype = blocked_locks.locktype
         AND blocking_locks.database IS NOT DISTINCT FROM blocked_locks.database
         AND blocking_locks.relation IS NOT DISTINCT FROM blocked_locks.relation
