@@ -27,8 +27,8 @@ import (
 	"regexp"
 
 	"github.com/pborman/getopt"
-	"github.com/rapidloop/pgmetrics"
-	"github.com/rapidloop/pgmetrics/collector"
+	"github.com/supergoodsystems/pgmetrics"
+	"github.com/supergoodsystems/pgmetrics/collector"
 	"golang.org/x/term"
 )
 

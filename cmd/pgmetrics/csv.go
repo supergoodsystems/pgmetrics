@@ -24,7 +24,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rapidloop/pgmetrics"
+	"github.com/supergoodsystems/pgmetrics"
 )
 
 // model2csv writes the CSV representation of the model into the given CSV writer.

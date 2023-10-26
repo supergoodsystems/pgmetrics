@@ -31,8 +31,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/rapidloop/pgmetrics"
 	"github.com/rapidloop/pq"
+	"github.com/supergoodsystems/pgmetrics"
 	"golang.org/x/mod/semver"
 )
 
