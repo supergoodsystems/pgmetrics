@@ -6,15 +6,12 @@ require (
 	github.com/aws/aws-sdk-go v1.44.305
 	github.com/dustin/go-humanize v1.0.1
 	github.com/pborman/getopt v1.1.0
-	github.com/rapidloop/pgmetrics v1.16.0
 	github.com/rapidloop/pq v1.1.1
 	golang.org/x/mod v0.12.0
 	golang.org/x/term v0.10.0
 )
 
-replace (
-	github.com/rapidloop/pgmetrics => github.com/supergoodsystems/pgmetrics v0.0.1
-)
+// replace github.com/rapidloop/pgmetrics => github.com/supergoodsystems/pgmetrics v0.0.1
 
 require (
 	github.com/Azure/azure-sdk-for-go/sdk/azcore v0.23.0 // indirect

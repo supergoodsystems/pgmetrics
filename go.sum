@@ -36,8 +36,6 @@ github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4/go.mod h1:N6UoU20jOqgg
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
-github.com/rapidloop/pgmetrics v1.16.0 h1:GKlgoqdxxGcVUjQS0kjLtbqb6qobMxfDVVZr4V50zLM=
-github.com/rapidloop/pgmetrics v1.16.0/go.mod h1:bQYwG69cXHQSRycc8/gx3ruXePpvDuwnlbblUOraerg=
 github.com/rapidloop/pq v1.1.1 h1:nC/PmemMKppcgQ1gE2BqxqlEEqzJIHL3afZOjjZhvnE=
 github.com/rapidloop/pq v1.1.1/go.mod h1:KCIg3rAcDl7ELp5s30z4lIp1xaOujoaMXnlYKhHECFo=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
