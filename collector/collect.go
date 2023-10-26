@@ -191,11 +191,11 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 		connstr += makeKV("sslmode", "disable")
 	}
 	if os.Getenv("PGENDPOINT") != "" {
-		connstr += makeKV("options", "endpoint%3D"+os.Getenv("PGENDPOINT"))
+		connstr += makeKV("options", "endpoint="+os.Getenv("PGENDPOINT"))
 	}
 
 	if os.Getenv("PGDATABASE") != "" {
-		connstr += makeKV("dbname", os.Getenv("PGDATABASE")+"?options="+"endpoint%3D"+os.Getenv("PGENDPOINT"))
+		connstr += makeKV("dbname", os.Getenv("PGDATABASE"))
 	}
 
 	connstr += makeKV("application_name", "pgmetrics")
