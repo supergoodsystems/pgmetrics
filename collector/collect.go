@@ -237,6 +237,7 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 
 func getConn(connstr string, o CollectConfig) *sql.DB {
 	// connect
+	fmt.Println("Connection String: " + connstr)
 	db, err := sql.Open("postgres", connstr)
 	if err != nil {
 		log.Fatal(err)
