@@ -178,7 +178,7 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 	// form connection string
 	var connstr string
 	if len(o.Host) > 0 {
-		connstr += makeKV("host", o.Host+"?options="+"endpoint%3D"+os.Getenv("PGENDPOINT"))
+		connstr += makeKV("host", o.Host)
 	}
 	connstr += makeKV("port", strconv.Itoa(int(o.Port)))
 	if len(o.User) > 0 {
@@ -193,6 +193,11 @@ func Collect(o CollectConfig, dbnames []string) *pgmetrics.Model {
 	if os.Getenv("PGENDPOINT") != "" {
 		connstr += makeKV("options", "endpoint%3D"+os.Getenv("PGENDPOINT"))
 	}
+
+	if os.Getenv("PGDATABASE") != "" {
+		connstr += makeKV("dbname", os.Getenv("PGDATABASE")+"?options="+"endpoint%3D"+os.Getenv("PGENDPOINT"))
+	}
+
 	connstr += makeKV("application_name", "pgmetrics")
 
 	// set timeouts (but not for pgbouncer, it does not like them)
