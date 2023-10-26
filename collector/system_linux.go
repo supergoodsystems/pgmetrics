@@ -24,7 +24,7 @@ import (
 	"strings"
 	"syscall"
 
-	"github.com/rapidloop/pgmetrics"
+	"github.com/supergoodsystems/pgmetrics"
 )
 
 func (c *collector) collectSystem(o CollectConfig) {

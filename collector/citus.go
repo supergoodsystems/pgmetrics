@@ -23,7 +23,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/rapidloop/pgmetrics"
+	"github.com/supergoodsystems/pgmetrics"
 	"golang.org/x/mod/semver"
 )
 

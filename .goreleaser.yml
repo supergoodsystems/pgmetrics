@@ -28,7 +28,7 @@ archives:
 release:
   draft: true
   github:
-    owner: rapidloop
+    owner: supergoodsystems
     name: pgmetrics
   name_template: 'Release {{.Version}}'
 checksum:

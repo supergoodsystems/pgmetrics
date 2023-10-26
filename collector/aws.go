@@ -30,7 +30,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/aws/aws-sdk-go/service/cloudwatchlogs"
 	"github.com/aws/aws-sdk-go/service/rds"
-	"github.com/rapidloop/pgmetrics"
+	"github.com/supergoodsystems/pgmetrics"
 )
 
 type awsCollector struct {
